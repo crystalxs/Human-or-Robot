@@ -4,7 +4,7 @@ Kaggle Competition: Facebook Recruiting IV: Human or Robot?
 
 https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot
 
-##Group Member
+## Group Member
 
 Xin Sun  
 Zhi Li  
@@ -24,19 +24,19 @@ The goal of this project is to identify online auction bids that are placed by "
 
 ## Table of Content
 
-###Preprocess data
+### Preprocess data
 
 1.     Join table
 2.     Check & Handle missing values
 3.     Feature engineering
 
-###Model fitting Process
+### Model fitting Process
 
 1. Decision Tree
 2. Random Forest
 3. Gradient Boosting
 
-###Model Comparison
+### Model Comparison
 
 1. Analysis of models
 2. Compare models

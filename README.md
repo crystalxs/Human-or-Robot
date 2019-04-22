@@ -1,9 +1,7 @@
 # Facebook Recruiting IV: Human or Robot?
 
-> https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/overview
->
-> Bean Solution: Xin Sun, Zhi Li, Minchen Wang, Hongdou Li, Bowen Ma
->
+> https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/overview   
+> Bean Solution: Xin Sun, Zhi Li, Minchen Wang, Hongdou Li, Bowen Ma   
 > Report: https://docs.google.com/presentation/d/1J6CYlZcH6qdpIOIxzyUXR9cpnSkneKLx59BNYdVXR2E/edit?usp=sharing
 
 ## Table of Content
@@ -46,13 +44,12 @@ The bids data is extremely imbalanced data, where bids made by human v.s. bids m
 
 For classification modeling, We tried several different supervised classification models, including Decision Tree, Random Forest, Gradient Boosting, etc. We also use grid search to tune the parameters of different types of models, so thus to best fit the train data. After modeling, we checked with:
 1. Feature importance
-2. Accuracy
+2. Accuracy   
 	Accuracy is not a good metric for extremely imbalanced dataset, since the ratio of made by robot vs. bids made by human in data set is 3:20, if we label all the bids as human, we still could get 86.75% accuracy, however, it doesn't target anything.
-3. AUC/ROC
+3. AUC/ROC   
 	AUC/ROC is a good metric for imbalanced dataset.
-4. Confusion Matrix
+4. Confusion Matrix   
 	+ We care about the precision because we don't want to miss any robot.  
-	
 	+ We care about the recall because we don't want to label any human user as robot to make users disappointed with the service. 
 
 

@@ -1,27 +1,25 @@
 # Facebook Recruiting IV: Human or Robot?
 
-> > https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/overview
-
-Bean Solution: Xin Sun, Zhi Li, Minchen Wang, Hongdou Li, Bowen Ma  
+> https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/overview
+> Bean Solution: Xin Sun, Zhi Li, Minchen Wang, Hongdou Li, Bowen Ma
+> Report: https://docs.google.com/presentation/d/1J6CYlZcH6qdpIOIxzyUXR9cpnSkneKLx59BNYdVXR2E/edit?usp=sharing
 
 ## Table of Content
 
 - [Project Goal](#Project Goal)
 - [Data Source](#Data Source)
 - [Data Preprocessing](#Data Preprocessing)
-  - [Data Cleaning]()
-  - [EDA]()
-  - [Feature Engineering]()
+  - [Data Cleaning](<https://github.com/crystalxs/human-or-robot/blob/master/data_cleaning.ipynb>)
+  - [EDA](<https://github.com/crystalxs/human-or-robot/blob/master/EDA.ipynb>)
+  - [Feature Engineering](<https://github.com/crystalxs/human-or-robot/blob/master/feature_engineering.ipynb>)
 - [Modeling](#Modeling)
-  - [Pre-modeling]()
-  - [Decision Tree]()
-  - [Random Forest]()
-  - [Gradient Boosting]()
+  - [Pre-modeling](<https://github.com/crystalxs/human-or-robot/blob/master/pre-modeling.ipynb>)
+  - [Decision Tree](<https://github.com/crystalxs/human-or-robot/blob/master/modeling_decision_tree.ipynb>)
+  - [Random Forest](<https://github.com/crystalxs/human-or-robot/blob/master/modeling_random_forest.ipynb>)
+  - [Gradient Boosting](<https://github.com/crystalxs/human-or-robot/blob/master/modeling_gradient_boosting.ipynb>)
 - [Evaluation](#Evaluation)
-  - [Model Comparison]()
+  - [Model Comparison](<https://github.com/crystalxs/human-or-robot/blob/master/model_comparison.ipynb>)
 - [Summary](#Summary)
-
-Throughout the jupyter notebook, We describe the process of connecting two datasets, cleaning data and finding useful features. For classification modeling, We tried several different supervised classification models, including Decision Tree, Random Forest, Gradient Boosting, etc. We also use grid search to tune the parameters of different types of models, so thus to best fit the train data. After modeling, we checked with accuracy, feature importance, confusion matrix and AUC/ROC to choose the optimal model. As a result, We are able to achieve a very accurate binary classifier by Gradient Boosting Model. 
 
 ## Project Goal
 
@@ -41,30 +39,29 @@ There are two kinds of datasets. One is a **bidder dataset** that includes a lis
 
 ## Data Preprocessing
 
-1. Join table
-2. Check & Handle missing values
-3. Feature engineering
+The bids data is extremely imbalanced data, where bids made by human v.s. bids made by robot is 30:20.
 
 ## Modeling
 
-1. Decision Tree
-2. Random Forest
-3. Gradient Boosting
-
-## Evaluation
-
-### Model Results
-
+For classification modeling, We tried several different supervised classification models, including Decision Tree, Random Forest, Gradient Boosting, etc. We also use grid search to tune the parameters of different types of models, so thus to best fit the train data. After modeling, we checked with:
 1. Feature importance
 2. Accuracy
-3. Confusion Matrix
-4. AUC/ROC
+	Accuracy is not a good metric for extremely imbalanced dataset, since the ratio of made by robot vs. bids made by human in data set is 3:20, if we label all the bids as human, we still could get 86.75% accuracy, however, it doesn't target anything.
+3. AUC/ROC
+  AUC/ROC is a good metric for imbalanced dataset.
+4. Confusion Matrix
+	+ We care about the precision because we don't want to miss any robot.  
+	+ We care about the recall because we don't want to label any human user as robot to make users disappointed with the service. 
 
-### Model Comparison
 
-1. Analysis of models
-2. Compare models
-3. Present and interpret best model
+|Metrics        |Decision Tree|Random Forest|Gradient Boosting|
+|:-------------:|:-----------:|:-----------:|:---------------:|
+|Accuracy_score |0.834        |0.922        |0.981            |
+|Precision_score|0.443        |0.657        |0.887            |
+|Recall_Score   |0.928        |0.877        |0.983            |
+|F1_score       |0.599        |0.752        |0.932            |
+|ROC_AUC_score  |0.873        |0.903        |0.982            |
+|Time(s)        |1.228        |75.841       |75.273           |
 
 ## Summary
 

@@ -1,14 +1,16 @@
 # Facebook Recruiting IV: Human or Robot?
 
 > https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/overview
+>
 > Bean Solution: Xin Sun, Zhi Li, Minchen Wang, Hongdou Li, Bowen Ma
+>
 > Report: https://docs.google.com/presentation/d/1J6CYlZcH6qdpIOIxzyUXR9cpnSkneKLx59BNYdVXR2E/edit?usp=sharing
 
 ## Table of Content
 
-- [Project Goal](#Project Goal)
-- [Data Source](#Data Source)
-- [Data Preprocessing](#Data Preprocessing)
+- Project Goal
+- Data Source
+- Data Preprocessing
   - [Data Cleaning](<https://github.com/crystalxs/human-or-robot/blob/master/data_cleaning.ipynb>)
   - [EDA](<https://github.com/crystalxs/human-or-robot/blob/master/EDA.ipynb>)
   - [Feature Engineering](<https://github.com/crystalxs/human-or-robot/blob/master/feature_engineering.ipynb>)
@@ -17,8 +19,7 @@
   - [Decision Tree](<https://github.com/crystalxs/human-or-robot/blob/master/modeling_decision_tree.ipynb>)
   - [Random Forest](<https://github.com/crystalxs/human-or-robot/blob/master/modeling_random_forest.ipynb>)
   - [Gradient Boosting](<https://github.com/crystalxs/human-or-robot/blob/master/modeling_gradient_boosting.ipynb>)
-- [Evaluation](#Evaluation)
-  - [Model Comparison](<https://github.com/crystalxs/human-or-robot/blob/master/model_comparison.ipynb>)
+- [Model Comparison](<https://github.com/crystalxs/human-or-robot/blob/master/model_comparison.ipynb>)
 - [Summary](#Summary)
 
 ## Project Goal
@@ -48,9 +49,10 @@ For classification modeling, We tried several different supervised classificatio
 2. Accuracy
 	Accuracy is not a good metric for extremely imbalanced dataset, since the ratio of made by robot vs. bids made by human in data set is 3:20, if we label all the bids as human, we still could get 86.75% accuracy, however, it doesn't target anything.
 3. AUC/ROC
-  AUC/ROC is a good metric for imbalanced dataset.
+	AUC/ROC is a good metric for imbalanced dataset.
 4. Confusion Matrix
 	+ We care about the precision because we don't want to miss any robot.  
+	
 	+ We care about the recall because we don't want to label any human user as robot to make users disappointed with the service. 
 
 

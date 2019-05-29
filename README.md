@@ -6,9 +6,9 @@
 
 ## Table of Content
 
-- Project Goal
-- Data Source
-- Data Preprocessing
+- [Project Goal](#goal)
+- [Data Source](#source)
+- [Data Preprocessing](#preprocessing)
   - [Data Cleaning](<https://github.com/crystalxs/human-or-robot/blob/master/data_cleaning.ipynb>)
   - [EDA](<https://github.com/crystalxs/human-or-robot/blob/master/EDA.ipynb>)
   - [Feature Engineering](<https://github.com/crystalxs/human-or-robot/blob/master/feature_engineering.ipynb>)
@@ -20,11 +20,11 @@
 - [Model Comparison](<https://github.com/crystalxs/human-or-robot/blob/master/model_comparison.ipynb>)
 - [Summary](#Summary)
 
-## Project Goal
+## Project Goal <a name="goal"/>
 
 The goal of this competition is to identify online auction bids that are placed by "robots", helping the site owners easily flag these users for removal from their site to prevent unfair auction activity.
 
-## Data Source
+## Data Source <a name="source"/>
 
 Our data is from Kaggle Competition: [Facebook Recruiting IV: Human or Robot?](https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot)
 
@@ -36,7 +36,7 @@ There are two kinds of datasets. One is a **bidder dataset** that includes a lis
 - **Bid dataset**
   - **bids.csv** - the bid dataset
 
-## Data Preprocessing
+## Data Preprocessing <a name="preprocessing"/>
 
 The bids data is extremely imbalanced data, where bids made by human v.s. bids made by robot is 30:20.
 
